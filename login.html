@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>WaVault - Iniciar Sesión</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div id="navbar-container"></div>
+
+  <!-- Formulario de Login -->
+  <div class="login-container">
+    <h1>Iniciar Sesión</h1>
+    <form id="login-form">
+      <input type="text" id="username" placeholder="Nombre de usuario" required>
+      <input type="password" id="password" placeholder="Contraseña" required>
+      <button type="submit">Iniciar sesión</button>
+    </form>
+    <p>No tienes cuenta? <a href="register.html">Regístrate</a></p>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    loadNavbar();
+
+    document.getElementById("login-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const usuario = {
+        username: document.getElementById("username").value,
+        password: document.getElementById("password").value
+      };
+
+      localStorage.setItem("usuarioActivo", JSON.stringify(usuario));
+      alert("Bienvenido, " + usuario.username);
+      window.location.href = "index.html";
+    });
+  </script>
+</body>
+
+</html>

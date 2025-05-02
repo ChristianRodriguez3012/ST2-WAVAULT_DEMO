@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>WaVault - Cerrar sesión</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="navbar-container"></div>
+
+  <!-- Mensaje de cierre de sesión -->
+  <div class="logout-container">
+    <h1>Has cerrado sesión</h1>
+    <p>Volverás a la página principal en unos segundos...</p>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Borrar los datos de sesión (usuario)
+    localStorage.removeItem("usuarioActivo");
+
+    // Redirigir al usuario a la página principal después de 2 segundos
+    setTimeout(function() {
+      window.location.href = "index.html"; // Redirigir a la página principal
+    }, 2000); // 2000 milisegundos (2 segundos)
+  </script>
+</body>
+</html>
